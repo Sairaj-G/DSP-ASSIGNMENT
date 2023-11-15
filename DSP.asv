@@ -1,0 +1,21 @@
+clc;
+
+close all;
+
+f = 0:0.1:5;                                               % frequency axis
+
+w= 2.*pi.*f;                                              % angular frequency axis
+
+H = (1./ (1-(w.^2)+ (i*2*w) ));                         % frequency response calculation
+
+subplot(2,1,1);
+plot(f,abs(H));
+title("magnitude response");
+xlabel("f");
+ylabel("|H(jw)|");
+
+subplot(2,1,2);
+plot(f,angle(H));
+title("phase response");
+xlabel("f");
+ylabel("
